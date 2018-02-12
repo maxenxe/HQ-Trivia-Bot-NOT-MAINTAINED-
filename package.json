@@ -1,0 +1,10 @@
+{
+  "name": "hqtriviabot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"   },
+  "author": "maxenxe",
+  "license": "ISC"
+}
