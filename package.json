@@ -4,7 +4,16 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"   },
+    "start": "node bot.js"
+  },
   "author": "maxenxe",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "desktop-screenshot": "^0.1.1",
+    "gm": "^1.23.1",
+    "google": "^2.1.0",
+    "nodecr": "0.0.5",
+    "request": "^2.83.0"
+  }
 }

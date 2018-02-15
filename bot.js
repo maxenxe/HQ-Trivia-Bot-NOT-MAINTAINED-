@@ -12,14 +12,14 @@ var pointsAnswer2;
 
 screenshot("screenshot.jpg", {width: 1600}, function(error, complete) {
     if(error)
-        console.log("Screenshot raté", error);
+        console.log("Screenshot failed", error);
     else
-        console.log("Screenshot réussi");
+        console.log("Screenshot done");
         gm('screenshot.jpg')
           .crop('351', '233', '606', '334')
           .write('answers.jpg', function (err) {
             if (!err) {
-              console.log("Réponses isolées");
+              console.log("Answers resized");
               nodecr.process('answers.jpg',function(err, text) {
                 if(err) {
                   console.error(err);
@@ -31,16 +31,16 @@ screenshot("screenshot.jpg", {width: 1600}, function(error, complete) {
                     console.log(answers[i]);
                   }
                   gm('screenshot.jpg')
-                    .crop('389','112', '587', '198')
+                    .crop('389','200', '587', '198')
                     .write('question.jpg', function (err) {
                       if (!err) {
-                        console.log("Question isolée");
+                        console.log("Question resized");
                         nodecr.process('question.jpg',function(err, text) {
           	              if(err) {
           		              console.error(err);
           	              } else {
                             question = text.replace(/\n/g, " ");
-                            console.log('La question est "' + question + '"');
+                            console.log('The question is "' + question + '"');
                             google.resultsPerPage = 25;
                             var nextCounter = 0;
 
@@ -51,53 +51,53 @@ screenshot("screenshot.jpg", {width: 1600}, function(error, complete) {
                                 var link = res.links[i];
                                 if(link.link != null) {
                                   if(link.link.indexOf("wikipedia") != -1) {
-                                    console.log("Lien wikipédia trouvé: " + link.link);
+                                    console.log("Wikipedia link found: " + link.link);
                                     request(link.link, function (error, response, body) {
                                       if (!error) {
                                         var $ = cheerio.load(body);
                                         if($('body').text().toLowerCase().indexOf(answers[0].toLowerCase()) != -1) {
-                                          console.log(answers[0] + " trouvé dans une page Wikipédia!")
+                                          console.log(answers[0] + " found in Wikipedia page!")
                                           pointsAnswer0++;
                                         }
 
                                         if($('body').text().toLowerCase().indexOf(answers[1].toLowerCase()) != -1) {
-                                          console.log(answers[1] + " trouvé dans une page Wikipédia!")
+                                          console.log(answers[1] + " found in Wikipedia page!")
                                           pointsAnswer1++;
                                         }
 
                                         if($('body').text().toLowerCase().indexOf(answers[2].toLowerCase()) != -1) {
-                                          console.log(answers[2] + " trouvé dans une page Wikipédia!")
+                                          console.log(answers[2] + " found in Wikipedia page!")
                                           pointsAnswer2++;
                                         }
                                       } else {
-                                        console.log("Erreur rencontrée: " + error);
+                                        console.log("Error: " + error);
                                       }
                                     });
                                   }
                                 }
                                 if(link.title.indexOf(answers[0]) != -1) {
                                   pointsAnswer0++;
-                                  console.log(answers[0] + " trouvé!");
+                                  console.log(answers[0] + " found!");
                                 }
                                 if(link.title.indexOf(answers[1]) != -1) {
                                   pointsAnswer1++;
-                                  console.log(answers[1] + " trouvé!");
+                                  console.log(answers[1] + " found!");
                                 }
                                 if(link.title.indexOf(answers[2]) != -1) {
                                   pointsAnswer2++;
-                                  console.log(answers[2] + " trouvé!");
+                                  console.log(answers[2] + " found!");
                                 }
                                 if(link.description.indexOf(answers[0]) != -1) {
                                   pointsAnswer0++;
-                                  console.log(answers[0] + " trouvé!");
+                                  console.log(answers[0] + " found!");
                                 }
                                 if(link.description.indexOf(answers[1]) != -1) {
                                   pointsAnswer1++;
-                                  console.log(answers[1] + " trouvé!");
+                                  console.log(answers[1] + " found!");
                                 }
                                 if(link.description.indexOf(answers[2]) != -1) {
                                   pointsAnswer2++;
-                                  console.log(answers[2] + " trouvé!");
+                                  console.log(answers[2] + " found!");
                                 }
                               }
 
