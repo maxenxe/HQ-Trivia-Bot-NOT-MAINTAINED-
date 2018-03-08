@@ -24,7 +24,9 @@ Get the latest version of the bot from GitHub using Git or download the reposito
 
 1. You'll also need a software that can tell you where your cursor is on your screen.
 
+1. Install [GraphicsMagik](http://www.graphicsmagick.org).
 
+1. Install [tesseract-ocr](https://github.com/tesseract-ocr/tesseract) and add it to your PATH environment variable.
 ## Setting up the bot 
 
 ![example](https://i.imgur.com/JiHMhLU.png)
