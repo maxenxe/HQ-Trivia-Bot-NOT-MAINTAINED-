@@ -37,7 +37,7 @@ Once you have those 2 coordinates, just do (bottom-right coordinates) - (top-lef
 
 With the image the result is (870;280).
 
-Go line 34 in bot.js and replace ` .crop('389','200', '587', '198') ` by  ` .crop('top-left-x','top-left-y', 'the result x', 'the result y')`
+Go line 34 in bot.js and replace ` .crop('389','200', '587', '198') ` by  ` .crop('the result x', 'the result y', 'top-left-x','top-left-y')`
 
 top-left-x is the x coordinate from the top-left point
 
