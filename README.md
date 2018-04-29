@@ -4,6 +4,8 @@ HQ Trivia Bot is a simple bot made with NodeJS that work with OCR and Google to 
 
 I made it for entertainement purposes only.
 
+[This vid](https://www.youtube.com/watch?v=QzdqT0HTGLs) shows how to set the bot up
+
 ## Getting the bot
 
 Get the latest version of the bot from GitHub using Git or download the repository as a ZIP file.
