@@ -1,5 +1,6 @@
 ## HQ Trivia Bot
 
+THIS PROJECT IS NOT MAINTAINED AND WILL NOT RECEIVE ANY UPDATE
 HQ Trivia Bot is a simple bot made with NodeJS that work with OCR and Google to help you find the right answer.
 
 I made it for entertainement purposes only.
